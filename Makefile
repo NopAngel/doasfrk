@@ -1,6 +1,6 @@
-_CFLAGS=$(CFLAGS) -Wall -D_GNU_SOURCE
+_CFLAGS=$(CFLAGS) -Wall -D_GNU_SOURCE -O2 -Wextra
 _LDFLAGS=$(LDFLAGS) -lcrypt
-CC=gcc
+CC=clang
 
 OBJS=doas.o env.o shadowauth.o persist.o y.tab.o			\
 	 bsd-compat/closefrom.o bsd-compat/errc.o 			\
@@ -55,4 +55,4 @@ clean:
 	$(Q)rm -f doas
 	$(Q)rm -f $(OBJS) y.tab.c
 	$(Q)rm -f version.h
-	$(Q)echo " CLEAN   Done.."
+	$(Q)echo " CLEAN   Done."
